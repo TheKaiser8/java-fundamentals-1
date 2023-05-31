@@ -14,14 +14,16 @@ public class TrainTicketCalc {
 
         double pricePerKm = 0.21;
         double ticketPrice = distance * pricePerKm;
+        double discount20 = 0.2;
+        double discount40 = 0.4;
 
         // Define discount conditions
         if (userAge <= 18) {
-            ticketPrice -= ticketPrice * 0.2;
-            System.out.println("Il costo del tuo biglietto scontato del 20% è : " + ticketPrice + "€");
+            ticketPrice -= ticketPrice * discount20;
+            System.out.println("Il costo del tuo biglietto scontato del " + (discount20 * 100) + "% è: "  + ticketPrice + "€");
         } else if (userAge > 65) {
-            ticketPrice -= ticketPrice * 0.4;
-            System.out.println("Il costo del tuo biglietto scontato del 40% è : " + ticketPrice + "€");
-        } else System.out.println("Il costo del tuo biglietto è : " + ticketPrice + "€");
+            ticketPrice -= ticketPrice * discount40;
+            System.out.println("Il costo del tuo biglietto scontato del " + (discount40 * 100) + "% è: " + ticketPrice + "€");
+        } else System.out.println("Il costo del tuo biglietto è: " + ticketPrice + "€");
     }
 }
